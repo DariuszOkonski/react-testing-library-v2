@@ -3,8 +3,6 @@ import { StarIcon } from '@primer/octicons-react';
 function RepositoriesSummary({ repository }) {
   const { stargazers_count, open_issues, forks, language } = repository;
 
-  debugger;
-
   return (
     <div className='flex flex-row gap-4 text-gray-700'>
       <div>
