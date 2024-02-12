@@ -33,3 +33,11 @@ afterEach(() => {
 afterAll(() => {
   server.close();
 });
+
+test('renders two links for each language', async () => {
+  render(
+    <MemoryRouter>
+      <HomeRoute />
+    </MemoryRouter>
+  );
+});
