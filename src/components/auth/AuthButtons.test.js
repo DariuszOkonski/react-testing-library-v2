@@ -2,12 +2,15 @@ import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import { createServer } from '../../test/server';
 import AuthButtons from './AuthButtons';
+import { SWRConfig } from 'swr';
 
 async function renderComponent() {
   render(
-    <MemoryRouter>
-      <AuthButtons />
-    </MemoryRouter>
+    <SWRConfig value={{ provider: () => new Map()}}>
+      <MemoryRouter>
+        <AuthButtons />
+      </MemoryRouter>
+    </SWRConfig>
   );
   await screen.findAllByRole('link');
 }
